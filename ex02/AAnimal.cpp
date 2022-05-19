@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,44 +10,39 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal(void)
+AAnimal::AAnimal(void)
 {
-	this->_type = "Animal";
-	std::cout << COLOR_GREEN << "[Animal] default constructor called\n" << COLOR_DEFAULT;
+	this->_type = "AAnimal";
+	std::cout << COLOR_GREEN << "[AAnimal] default constructor called\n" << COLOR_DEFAULT;
 }
 
-Animal::Animal(std::string type)
+AAnimal::AAnimal(std::string type)
 {
 	this->_type = type;
-	std::cout << COLOR_GREEN << "[Animal] type constructor called type= " << type << std::endl << COLOR_DEFAULT;
+	std::cout << COLOR_GREEN << "[AAnimal] type constructor called type= " << type << std::endl << COLOR_DEFAULT;
 }
 
-Animal::Animal(Animal const & input)
+AAnimal::AAnimal(AAnimal const & input)
 {
 	*this = input;
-	std::cout << COLOR_GREEN << "[Animal] copy constructor called\n";
+	std::cout << COLOR_GREEN << "[AAnimal] copy constructor called\n";
 }
 
-Animal const & Animal::operator=(Animal const & input)
+AAnimal const & AAnimal::operator=(AAnimal const & input)
 {
 	this->_type = input._type;
-	std::cout << COLOR_GREEN << "[Animal] assignement constructor called\n" << COLOR_DEFAULT;
+	std::cout << COLOR_GREEN << "[AAnimal] assignement constructor called\n" << COLOR_DEFAULT;
 	return (*this);
 }
 
-Animal::~Animal(void)
+AAnimal::~AAnimal(void)
 {
-	std::cout << COLOR_GREEN << "[Animal] destructor called\n" << COLOR_DEFAULT;
+	std::cout << COLOR_GREEN << "[AAnimal] destructor called\n" << COLOR_DEFAULT;
 }
 
-void	Animal::makeSound(void) const
-{
-	std::cout << COLOR_GREEN << "[Animal] makeSound default member function called\n" << COLOR_DEFAULT;
-}
-
-std::string	Animal::getType(void) const
+std::string	AAnimal::getType(void) const
 {
 	return (this->_type);
 }

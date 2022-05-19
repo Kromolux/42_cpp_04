@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 09:51:57 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/05/19 12:50:57 by rkaufman         ###   ########.fr       */
+/*   Created: 2022/05/19 09:46:04 by rkaufman          #+#    #+#             */
+/*   Updated: 2022/05/19 16:26:03 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef WRONGANIMAL_H
-# define WRONGANIMAL_H
+#ifndef DOG_H
+# define DOG_H
 # include <iostream>
-# include "colors.h"
+# include "AAnimal.hpp"
+# include "Brain.hpp"
 
-class	WrongAnimal
+class	Dog : public AAnimal
 {
 
 public:
 
-	WrongAnimal(void);
-	WrongAnimal(std::string type);
-	WrongAnimal(WrongAnimal const & input);
-	WrongAnimal const & operator=(WrongAnimal const & input);
-	virtual ~WrongAnimal(void);
+	Dog(void);
+	Dog(Dog const & input);
+	Dog const & operator=(Dog const & input);
+	virtual	~Dog(void);
 
-	void			makeSound(void) const;
-	std::string		getType(void) const;
+	virtual void	makeSound(void) const;
+	void			setIdea(unsigned int index, std::string idea) const;
+	std::string		getIdea(unsigned int index) const;
 
 protected:
-
-	std::string		_type;
 
 
 private:
 
+	Brain * _myBrain;
 
 };
 

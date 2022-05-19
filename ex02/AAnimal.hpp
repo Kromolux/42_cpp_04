@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   AAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 09:51:57 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/05/19 12:50:57 by rkaufman         ###   ########.fr       */
+/*   Created: 2022/05/19 09:31:52 by rkaufman          #+#    #+#             */
+/*   Updated: 2022/05/19 16:24:53 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef WRONGANIMAL_H
-# define WRONGANIMAL_H
+#ifndef AAnimal_H
+# define AAnimal_H
 # include <iostream>
 # include "colors.h"
 
-class	WrongAnimal
+class	AAnimal
 {
 
 public:
 
-	WrongAnimal(void);
-	WrongAnimal(std::string type);
-	WrongAnimal(WrongAnimal const & input);
-	WrongAnimal const & operator=(WrongAnimal const & input);
-	virtual ~WrongAnimal(void);
+	AAnimal(void);
+	AAnimal(std::string type);
+	AAnimal(AAnimal const & input);
+	AAnimal const & operator=(AAnimal const & input);
+	virtual ~AAnimal(void);
 
-	void			makeSound(void) const;
+	virtual void	makeSound(void) const = 0;
 	std::string		getType(void) const;
 
 protected:

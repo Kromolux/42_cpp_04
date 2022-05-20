@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 21:05:06 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/05/20 08:55:14 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/05/20 09:28:20 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ Character const & Character::operator=(Character const & input)
 	{
 		if (input._slot[i] != NULL)
 			this->_slot[i] = input._slot[i]->clone();
+		else
+			this->_slot[i] = NULL;
 		this->_floor[i] = NULL;
 	}
 	this->_indexFloor = -1;

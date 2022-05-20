@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 13:04:47 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/05/19 16:30:28 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/05/20 09:21:43 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ Brain::~Brain(void)
 
 void	Brain::setIdea(unsigned int index, std::string idea)
 {
-	if (index >= 0 && index < _MaxIdeas)
+	if (index < _MaxIdeas)
 		this->_ideas[index] = idea;
 }
 
 std::string	Brain::getIdea(unsigned int index) const
 {
-	if (index >= 0 && index < _MaxIdeas)
+	if (index < _MaxIdeas)
 		return (this->_ideas[index]);
 	return ("invalid index!");
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rkaufman <rkaufman@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 21:38:05 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/05/20 07:23:59 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/05/20 09:26:14 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ MateriaSource const & MateriaSource::operator=(MateriaSource const & input)
 			if (DEBUG)
 				std::cout << COLOR_MAGENTA << "[MateriaSource] copied " << input._slot[i]->getType() << "\n" << COLOR_DEFAULT;
 		}
+		else
+			this->_slot[i] = NULL;
 	}
 	if (DEBUG)
 		std::cout << COLOR_MAGENTA << "[MateriaSource] assignement constructor called\n" << COLOR_DEFAULT;

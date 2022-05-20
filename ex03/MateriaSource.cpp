@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 21:38:05 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/05/19 22:49:19 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/05/20 07:23:59 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,30 @@ MateriaSource::MateriaSource(void)
 	{
 		this->_slot[i] = NULL;
 	}
-	std::cout << COLOR_MAGENTA << "[MateriaSource] default constructor called" << std::endl << COLOR_DEFAULT;
+	if (DEBUG)
+		std::cout << COLOR_MAGENTA << "[MateriaSource] default constructor called" << std::endl << COLOR_DEFAULT;
 }
 
 MateriaSource::MateriaSource(MateriaSource const & input)
 {
 	*this = input;
-	std::cout << COLOR_MAGENTA << "[MateriaSource] copy constructor called\n";
+	if (DEBUG)
+		std::cout << COLOR_MAGENTA << "[MateriaSource] copy constructor called\n";
 }
 
 MateriaSource const & MateriaSource::operator=(MateriaSource const & input)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->_slot[i] != NULL)
+		if (input._slot[i] != NULL)
+		{
 			this->_slot[i] = input._slot[i]->clone();
+			if (DEBUG)
+				std::cout << COLOR_MAGENTA << "[MateriaSource] copied " << input._slot[i]->getType() << "\n" << COLOR_DEFAULT;
+		}
 	}
-	std::cout << COLOR_MAGENTA << "[MateriaSource] assignement constructor called\n" << COLOR_DEFAULT;
+	if (DEBUG)
+		std::cout << COLOR_MAGENTA << "[MateriaSource] assignement constructor called\n" << COLOR_DEFAULT;
 	return (*this);
 }
 
@@ -45,7 +52,8 @@ MateriaSource::~MateriaSource(void)
 		if (this->_slot[i] != NULL)
 			delete _slot[i];
 	}
-	std::cout << COLOR_MAGENTA << "[MateriaSource] destructor called\n" << COLOR_DEFAULT;
+	if (DEBUG)
+		std::cout << COLOR_MAGENTA << "[MateriaSource] destructor called\n" << COLOR_DEFAULT;
 }
 
 void MateriaSource::learnMateria(AMateria * m)

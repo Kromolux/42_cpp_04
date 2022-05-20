@@ -6,7 +6,7 @@
 #    By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 19:50:19 by rkaufman          #+#    #+#              #
-#    Updated: 2022/05/19 22:51:44 by rkaufman         ###   ########.fr        #
+#    Updated: 2022/05/20 09:00:26 by rkaufman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRCS		:=	main.cpp \
 
 OBJS		:=	$(SRCS:%.cpp=%.o)
 
-CFLAGS		:=	-Wall -Wextra -Werror -std=c++98 -g
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98 $(DFLAG) -g
+DFLAG		:=	-D DEBUG=0
 
 all: $(NAME)
 

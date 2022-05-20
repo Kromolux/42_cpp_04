@@ -6,7 +6,7 @@
 /*   By: rkaufman <rkaufman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 20:35:42 by rkaufman          #+#    #+#             */
-/*   Updated: 2022/05/19 21:54:09 by rkaufman         ###   ########.fr       */
+/*   Updated: 2022/05/20 07:06:11 by rkaufman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,35 @@
 
 Ice::Ice(void) : AMateria("ice")
 {
-	std::cout << COLOR_BLUE << "[Ice] default constructor called\n" << COLOR_DEFAULT;
+	if (DEBUG)
+		std::cout << COLOR_BLUE << "[Ice] default constructor called\n" << COLOR_DEFAULT;
 }
 
 Ice::Ice(std::string const & type) : AMateria(type)
 {
-	std::cout << COLOR_BLUE << "[Ice] default constructor called\n" << COLOR_DEFAULT;
+	if (DEBUG)
+		std::cout << COLOR_BLUE << "[Ice] default constructor called\n" << COLOR_DEFAULT;
 }
 
 Ice::Ice(Ice const & input) : AMateria("ice_copy")
 {
 	*this = input;
-	std::cout << COLOR_BLUE << "[Ice] copy constructor called\n";
+	if (DEBUG)
+		std::cout << COLOR_BLUE << "[Ice] copy constructor called\n";
 }
 
 Ice const & Ice::operator=(Ice const & input)
 {
 	this->_type = input._type;
-	std::cout << COLOR_BLUE << "[Ice] assignement constructor called\n" << COLOR_DEFAULT;
+	if (DEBUG)
+		std::cout << COLOR_BLUE << "[Ice] assignement constructor called\n" << COLOR_DEFAULT;
 	return (*this);
 }
 
 Ice::~Ice(void)
 {
-	std::cout << COLOR_BLUE << "[Ice] destructor called\n" << COLOR_DEFAULT;
+	if (DEBUG)
+		std::cout << COLOR_BLUE << "[Ice] destructor called\n" << COLOR_DEFAULT;
 }
 
 std::string const & Ice::getType(void) const
